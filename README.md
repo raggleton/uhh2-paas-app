@@ -16,3 +16,11 @@ The python WSGI HTTP Server is handled by gunicorn.
 These are hosted on a CERN openshift page.
 
 (Or that's the plan at least)
+
+
+## Odds n ends
+
+- By default the openshift sites are only visible **inside** the CERN network. To configure access to the widerInternet, see https://cern.service-now.com/service-portal/article.do?n=KB0004359
+
+- If you have `app.py`, and you haven't set `APP_CONFIG`, then it will ruun that instead of gunicorn etc, Which is not what you want.
+
