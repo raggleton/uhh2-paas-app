@@ -1,4 +1,4 @@
-# uhh2-pass-app
+# uhh2-paas-app
 
 This is a simple Flask web app that runs on a server. It is simply to allow github and gitlab to communicate.
 
