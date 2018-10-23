@@ -8,10 +8,22 @@ https://github.com/sclorg/s2i-python-container/issues/190
 """
 
 
-from flask import Flask
+import sys
+import logging
+from flask import Flask, request
 
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.INFO)
+
+
+@app.route("/gitlab-forward", methods=["GET", "POST"])
+def gitlab_forwarder():
+    """Handle an incoming POST from github, do something to gitlab"""
+    app.logger.info(request)
+    app.logger.info(request.get_json())
+    return 'Forwarding'
 
 
 @app.route('/')
