@@ -27,7 +27,7 @@ def gitlab_forwarder():
 
     pr_num = request_json["number"]
     base_branch = request_json["pull_request"]["base"]["ref"]
-    proposer = request_json["pull_request"]["user"]
+    proposer = request_json["pull_request"]["user"]["login"]
     app.logger.info("Handling PR %d from %s, to merge into branch %s" % (pr_num, proposer, base_branch))
     return 'Forwarding to gitlab'
 
