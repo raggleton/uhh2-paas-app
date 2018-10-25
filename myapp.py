@@ -22,8 +22,14 @@ app.logger.setLevel(logging.INFO)
 def gitlab_forwarder():
     """Handle an incoming POST from github, do something to gitlab"""
     app.logger.info(request)
-    app.logger.info(request.get_json())
-    return 'Forwarding'
+    request_json = request.get_json()
+    app.logger.info(request_json)
+
+    pr_num = request_json["number"]
+    base_branch = request_json["pull_request"]["base"]["ref"]
+    proposer = request_json["pull_request"]["user"]
+    app.logger("Handling PR %d from %s, to merge into branch %s" % (pr_num, proposer, base_branch))
+    return 'Forwarding to gitlab'
 
 
 @app.route('/')
