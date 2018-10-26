@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 
 git clone ssh://git@gitlab.cern.ch:7999/raggleto/test-gitlab-ci.git
 cd test-gitlab-ci
