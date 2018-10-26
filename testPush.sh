@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 git clone ssh://git@gitlab.cern.ch:7999/raggleto/test-gitlab-ci.git
 cd test-gitlab-ci
 git checkout -b dummy master
