@@ -38,7 +38,7 @@ def gitlab_forwarder():
         return 'Doing nothing'
 
     app.logger.info("Pushing to gitlab")
-    check_call(['./testPush', str(pr_num), base_branch])
+    check_call(['./testPush.sh', str(pr_num), base_branch])
 
     return 'Forwarding to gitlab'
 
