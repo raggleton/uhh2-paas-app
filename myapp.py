@@ -45,7 +45,7 @@ def gitlab_forwarder():
 
 @app.route('/')
 def index():
-    check_output('source cmd.sh', shell=True)
+    check_output('./cmd.sh', shell=True)
     return "Hello. This is your app."
 
 
