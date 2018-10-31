@@ -11,7 +11,7 @@ https://github.com/sclorg/s2i-python-container/issues/190
 import sys
 import logging
 from flask import Flask, request
-from subprocess import check_call
+from subprocess import check_output
 
 
 app = Flask(__name__)
@@ -38,13 +38,15 @@ def gitlab_forwarder():
         return 'Doing nothing'
 
     app.logger.info("Pushing to gitlab")
-    check_call(['./testPush.sh', str(pr_num), base_branch])
+    check_output(['./testPush.sh', str(pr_num), base_branch])
 
     return 'Forwarding to gitlab'
 
 
 @app.route('/')
 def index():
+    check_output(['id'])
+    check_output(['cat /etc/passwd'])
     return "Hello. This is your app."
 
 
