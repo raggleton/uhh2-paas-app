@@ -45,8 +45,7 @@ def gitlab_forwarder():
 
 @app.route('/')
 def index():
-    check_output(['id'])
-    check_output(['cat /etc/passwd'])
+    check_output(['./cmd.sh'])
     return "Hello. This is your app."
 
 
