@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Setup ssh first
-# Shoudl setup env var first with GIT_USERNAME and GIT_EMAIL
+# Should setup env var first with GIT_USERNAME and GIT_EMAIL
 eval $(ssh-agent -s)
 ssh-add /secrets/ssh-privatekey
-git config user.name ${GIT_USERNAME}
-git config user.email ${GIT_EMAIL}
+git config user.name "${GIT_USERNAME}"
+git config user.email "${GIT_EMAIL}"
 
 # The following bit is as per the run script
 # https://github.com/sclorg/s2i-python-container/blob/master/3.6/s2i/bin/run
