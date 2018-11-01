@@ -25,6 +25,8 @@ def gitlab_forwarder():
     app.logger.info(request)
     request_json = request.get_json()
     app.logger.info(request_json)
+    if request_json is None:
+        return 'Doing nothing'
 
     action = request_json["action"]
 
