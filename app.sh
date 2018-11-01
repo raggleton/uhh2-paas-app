@@ -4,6 +4,7 @@
 # Should setup env var first with GIT_USERNAME and GIT_EMAIL
 eval $(ssh-agent -s)
 ssh-add /secrets/ssh-privatekey
+ssh-add -l
 git config user.name "${GIT_USERNAME}"
 git config user.email "${GIT_EMAIL}"
 
