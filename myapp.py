@@ -39,6 +39,11 @@ def gitlab_forwarder():
     if action not in should_run_actions:
         return 'Doing nothing'
 
+    if action == "labeled":
+        # Get label added
+        new_label = request_json["label"]["name"]
+        app.logger.info("Added label %s" % new_label)
+
     app.logger.info("Pushing to gitlab")
     check_output(['./testPush.sh', str(pr_num), base_branch])
 
