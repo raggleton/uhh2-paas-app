@@ -5,8 +5,8 @@
 eval $(ssh-agent -s)
 ssh-add /secrets/ssh-privatekey
 ssh-add -l
-git config user.name "${GIT_USERNAME}"
-git config user.email "${GIT_EMAIL}"
+git config --global user.name "${GIT_USERNAME}"
+git config --global user.email "${GIT_EMAIL}"
 
 # Add known hosts
 mkdir -p ~/.ssh
