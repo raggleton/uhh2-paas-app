@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+whoami
+ssh-add -l
+
 # Setup ssh first
 # Should setup env var first with GIT_USERNAME and GIT_EMAIL
 eval $(ssh-agent -s)
